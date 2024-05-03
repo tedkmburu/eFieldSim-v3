@@ -1,3 +1,5 @@
+"use strict"
+
 function displayCursor()  
 {
     let canvas = foreGroundCanvas;

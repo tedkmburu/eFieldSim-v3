@@ -1,3 +1,5 @@
+"use strict"
+
 function createPreset(preset)
 {
     let canvas = foreGroundCanvas;
@@ -47,7 +49,7 @@ function createPreset(preset)
     {
         for (let i = 0; i < 4; i++)
         {
-            createPointCharge(canvas.createVector(center.x + (i * (chargeDiameter + 35)) - 150, center.y + i), 2,);
+            createPointCharge(canvas.createVector(center.x + (i * (chargeDiameter + 35)) - 150, center.y + i), 3,);
         }
     }
     else if (preset == "dipole row")
@@ -60,7 +62,7 @@ function createPreset(preset)
     }
     else if (preset == "random")
     {
-        for (let i = 0; i < 4; i++)
+        for (let i = 0; i < 3; i++)
         {
             let x = (Math.random() * (innerWidth - sidePanelWidth - 200)) + 100
             let y = (Math.random() * (innerHeight - 200)) + 100; 

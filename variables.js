@@ -1,3 +1,5 @@
+"use strict"
+
 const k = 89900; // k = 8.99 * Math.pow(10, -9) adjusted because all charges are in micro coulombs;
 
 const gridSize = 25;
@@ -31,6 +33,11 @@ showPopUp,
 fullscreen,
 showVoltageValue;
 
+let currentPopUp = 0;
+let helpImages = []
+let helpButtons = []
+let helpText = []
+
 let foreGroundCanvas;
 let backgroundCanvas;
 let mousePosition;
@@ -39,7 +46,7 @@ let showContextMenu = false;
 let contextMenuPosition; 
 
 let charges = []; // all charges on screen are stored here
-let testCharges = [];
+let testCharges = []; // all test charges on screen are stored here
 
 let buttons = [];
 let contextMenuButtons = []; 
@@ -61,5 +68,5 @@ let snapToGrid = false;
 let menuOpen = true;
 let QRCode;
 let showQRCode = false; 
-let showHelp = false; 
+let showHelp = true; 
 let icons;

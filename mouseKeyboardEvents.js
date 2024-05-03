@@ -1,3 +1,5 @@
+"use strict"
+
 function moveKeys() // if the arrow keys are pressed, the selected charge moves
 {
   let canvas = foreGroundCanvas;
@@ -35,7 +37,18 @@ function whenMouseClicked() // this is an inbuilt p5 function that runs everytim
   }
 
   buttons.forEach(button => { // this will loop through all the buttons
-    if (button.visible) 
+    if (button.visible && !showHelp) 
+    {
+      if (pointIsInsideRect(mousePosition, button)) // if the point where the user clicks is inside the button
+      {
+        button.clicked();
+        return;
+      }
+    }
+  })
+
+  helpButtons.forEach(button => { // this will loop through all the buttons in popups
+    if (button.visible && showHelp) 
     {
       if (pointIsInsideRect(mousePosition, button)) // if the point where the user clicks is inside the button
       {
@@ -46,7 +59,7 @@ function whenMouseClicked() // this is an inbuilt p5 function that runs everytim
   })
 
   checkBoxes.forEach(checkBox => { // these will loop through all the checkBoxes
-    if (checkBox.visible) 
+    if (checkBox.visible && !showHelp) 
     {
       if (pointIsInsideRect(mousePosition, checkBox)) // if the point where the user clicks is inside the checkbox
       {
@@ -196,7 +209,7 @@ function whenMouseDragged()
 
 function whenDoubleClicked()
 {
-  if (!testChargeMode)
+  if (!testChargeMode  && !showHelp)
   {
     let notTouching = true;
     charges.forEach(charge => {

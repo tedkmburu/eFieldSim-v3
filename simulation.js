@@ -1,3 +1,5 @@
+"use strict"
+
 const background = canvas => {
 
     canvas.setup = function()  // This function only runs once when the page first loads. 
@@ -39,14 +41,27 @@ const background = canvas => {
         canvas.loadImage("icons/menu.png"), 
         canvas.loadImage("icons/trashWhite.png") 
       ]
+
+      helpImages = [
+        canvas.loadImage("icons/1.png"), 
+        canvas.loadImage("icons/2.png"), 
+        //canvas.loadImage("icons/info.png"), 
+        canvas.loadImage("icons/3.png"), 
+        canvas.loadImage("icons/4.png"), 
+        canvas.loadImage("icons/checkboxes.png"), 
+        // canvas.loadImage("icons/trashWhite.png") 
+      ]
+
     }
   
     canvas.setup = function()  // This function only runs once when the page first loads. 
     {
+      
       let firstOpenSimulation = canvas.getItem('firstOpenSimulation')
+      createPopUps()
       if (firstOpenSimulation == null) 
       {
-        toggleHelp()
+        showHelp = true;
         canvas.storeItem('firstOpenSimulation', false);
       }
   
@@ -86,6 +101,7 @@ const background = canvas => {
       displaySidePanel();
       displayCheckBoxes();
       displayButtons();
+      displayPopUp();
       
   
       if (showContextMenu) displayContextMenu();

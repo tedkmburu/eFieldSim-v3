@@ -1,3 +1,5 @@
+"use strict"
+
 function displayEquipotentialLines()
 {
     equiLines.forEach(equiLine => {

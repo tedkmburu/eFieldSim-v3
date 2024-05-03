@@ -1,3 +1,4 @@
+"use strict"
 
 function createSidePanel()
 {
@@ -75,6 +76,7 @@ function bottomButtons(i)
 
 function toggleHelp()
 {
+    console.log("showHelp:", document.getElementById("popup").style.visibility);
     if (!showHelp) 
     {
         document.getElementById("popup").style.visibility = "hidden";

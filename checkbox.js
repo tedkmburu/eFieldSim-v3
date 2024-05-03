@@ -1,3 +1,5 @@
+"use strict"
+
 function displayCheckBoxes() // displays all the checkboxes
 {
     checkBoxes.forEach(checkBox => {

@@ -1,3 +1,5 @@
+"use strict"
+
 function voltageAtPoint(point)
 {
   let voltage = 0;

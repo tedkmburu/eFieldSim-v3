@@ -1,3 +1,5 @@
+"use strict"
+
 function createContextMenu()
 {
     let canvas = foreGroundCanvas;

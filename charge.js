@@ -1,3 +1,5 @@
+"use strict"
+
 class Charge
 {
     constructor(position, charge)

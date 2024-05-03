@@ -1,3 +1,4 @@
+"use strict"
 
 function displayButtons() // displays all the buttons
 {
@@ -13,7 +14,8 @@ class Button
 {
     constructor(props)
     {
-        let canvas = foreGroundCanvas;
+        let canvas = backgroundCanvas;
+
         this.position = props.position;
         this.width = props.width;
         this.height = props.height;
